@@ -39,6 +39,9 @@ function emptyTablesGenerator(width, height) {
             td.appendChild(emptySellGenerator())
         }
     }
+    board.style.display = "flex";
+    board.style.alignItems = "center";
+    board.style.justifyContent = "center";
 }
 
 function random(min, max) {
