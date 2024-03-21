@@ -450,7 +450,7 @@ button.addEventListener('click', function help() {
 });
 
 function help (){
-    let a = "Спочатку порахуй магічну константу";
+    let a = "Зверни увагу на магічну константу у колі";
     document.getElementById("a").innerHTML = a;
 }
 function antihelp (){
