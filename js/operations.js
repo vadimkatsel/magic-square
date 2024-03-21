@@ -88,18 +88,18 @@ async function generate() {
 
     switch (COMPLEXITY_TYPE) {
         case "EASY_LEVEL": {
-            BEG = Math.floor(Math.random() * 4) + 1; // від 1 до 4
-            STEP = Math.floor(Math.random() * 2) + 1; // від 1 до 2
+            BEG = getRandomNumberInRange(1, 5) 
+            STEP = getRandomNumberInRange(1, 2) 
             break
         }
         case "MEDIUM_LEVEL": {
-            BEG = Math.floor(Math.random() * 4) + 3; // від 3 до 7
-            STEP = Math.floor(Math.random() * 3) + 3; // від 3 до 5
+            BEG = getRandomNumberInRange(5, 7); // від 3 до 7
+            STEP = getRandomNumberInRange(1, 11 - N); // від 1 до 11 - N
             break
         }
         case "HARD_LEVEL": {
-            BEG = Math.floor(Math.random() * 5) + 6; // від 6 до 10
-            STEP = Math.floor(Math.random() * 6) + 5; // від 5 до 10
+            BEG = getRandomNumberInRange(6, 10) // від 6 до 10
+            STEP = getRandomNumberInRange(1, 11 - N);  // від 1 до 11 - N
             break
         }
         default: throw new Error("unknown complexity level")
@@ -140,10 +140,16 @@ async function generate() {
     initial_square = Magic_square_obj.square;
     CONST = (2 * Number(BEG) + Number(STEP) * (Number(N) ** 2 - 1)) * 0.5 * Number(N) ** 2 / Number(N);
     outputElement.textContent = Number(CONST);
-    outputElement.style.fontSize =  "64px";
-    outputElement.style.padding = "6px 6px";
+   outputElement.style.lineHeight = "2em";
+    outputElement.style.fontSize =  "300%"; 
     outputElement.style.border = "5px solid #4A90E2";
+    outputElement.style.padding = "5%";
     outputElement.style.borderRadius = "50%";
+    outputElement.style.display = "flex";
+    outputElement.style.alignItems = "center";
+    outputElement.style.justifyContent = "center";
+    outputElement.style.width = "5ch";
+    outputElement.style.height = "5ch";
     
 
 
@@ -152,21 +158,15 @@ async function generate() {
     let step = 0.05 * N * N
     switch (COMPLEXITY_TYPE) {
         case "EASY_LEVEL": {
-            min = Math.floor(N * N * 0.3);
-            BEG = Math.floor(Math.random() * 3) + 1;
-            STEP = Math.floor(Math.random() * 5) + 1;
+            min = Math.floor(N * N * 0.2);
             break
         }
         case "MEDIUM_LEVEL": {
-            min = Math.floor(N * N * 0.55);
-            BEG = Math.floor(Math.random() * 5) + 1;
-            STEP = Math.floor(Math.random() * 5) + 1;
+            min = Math.floor(N * N * 0.4);
             break
         }
         case "HARD_LEVEL": {
-            min = Math.floor(N * N * 0.75);
-            BEG = Math.floor(Math.random() * 10) + 1;
-            STEP = Math.floor(Math.random() * 5) + 1;
+            min = Math.floor(N * N * 0.5);
             break
         }
         default: throw new Error("unknown complexity level")
