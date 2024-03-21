@@ -107,14 +107,14 @@ function buildDoublyEvenMagicSquare(n, m_min, step) {
                 if (!(n / 4 - 1 < j && j < 3 * n / 4)) {
                         square[i][j] = m;
                     } else {
-                        square[i][j] = m_max - m + 2 * m_min - step
+                        square[i][j] = m_max - m + m_min
                     }
                 }
                 else if (n / 4 - 1 < i < 3 * n / 4) {
                     if (n / 4 - 1 < j && j < 3 * n / 4) {
                         square[i][j] = m;
                     } else {
-                        square[i][j] = m_max - m + 2 * m_min - step
+                        square[i][j] = m_max - m + m_min 
                     }
 
                 }
@@ -128,7 +128,6 @@ function buildDoublyEvenMagicSquare(n, m_min, step) {
 
 
 function isMagicSquare(matrix) {
-    console.log(matrix)
 
     const n = matrix.length;
     if (!matrix.every(row => row.length === n)) {
