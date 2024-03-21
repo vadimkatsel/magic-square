@@ -10,53 +10,55 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap-grid.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap-grid.min.css">
 </head>
 <body>
-<main>
+<main class="container">
     <header>
         Обери рівень складності завдання (легкий, середній чи важкий), порядок (розмір) квадрата, а потім натисни
          кнопку "Створити". Віднови квадрат так, щоб кожне число зустрічалося тільки один раз та сума чисел <br>
-        у кожному рядку, стовпчику та по обох діагоналях була однаковою та дорівнювала 
-        магічній константі — числу поруч із квадратом.
+        у кожному рядку, стовпчику та по обох діагоналях була однаковою та дорівнювала магічній константі — числу поруч із квадратом.
     </header>
-    <nav>
-        <section id="complexity-level" class="radio-check-area" >
+    <nav class="row">
+        <section id="complexity-level" class="radio-check-area col-sm-12 col-md-8 col-lg" style="margin-top: 2%; margin-bottom: 2%;" >
             <span>Складність:</span>
-            <label tabindex="5">
+            <label tabindex="1">
                 <input type="radio" name="complexity" value="EASY_LEVEL" selected>
                 <span class="inner" id="EASY_LEVEL"></span>
                 <span>Легк.</span>
             </label>
-            <label tabindex="6">
+            <label tabindex="2">
                 <input type="radio" name="complexity" value="MEDIUM_LEVEL">
                 <span class="inner" id="MEDIUM_LEVEL"></span>
                 <span>Сер.</span>
             </label>
-            <label tabindex="7">
+            <label tabindex="3">
                 <input type="radio" name="complexity" value="HARD_LEVEL">
                 <span class="inner" id="HARD_LEVEL"></span>
                 <span>Важк.</span>
             </label>
         </section>
-        <section style="display: flex; align-items: center;">
+        <section style="display: flex; align-items: center; margin-top: 2%; margin-bottom: 2%;" class=" col-sm-12 col-md-4 col-lg">
             <label id="order-label">Порядок:
                 <input name="order" id="order" inputmode="numeric" min="3" max="10" placeholder="3">
             </label>
         </section>
-        <button type="button" class="cta cta-primary" id="generate" onclick="generate()">Створити</button>
+        <div class="col-sm-12 col-md-12 col-lg" style="display: flex; align-items: center; justify-content: center; margin-top: 2%; margin-bottom: 2%;">
+            <button type="button" class="cta cta-primary" id="generate" onclick="generate()">Створити</button>
+        </div>
     </nav>
 
-
-    <div id="magic-square">
-        <div id="const"></div>
-        <div id="board">
+    <div id="magic-square" class="row" style="margin-top: 2%; margin-bottom: 2%;">
+        <div class="col-xs-12 col-sm-12 col-lg-3" style="display: flex; align-items: center; justify-content: center;" >
+            <p id ="const" ></p>
         </div>
-
+        <div class="col-xs-12 col-sm-12 col-lg-9 ">
+            <div id="board"></div>
+        </div>
     </div>
 </main>
 
-<footer class="int-footer">
+<footer class="int-footer container">
     <button type="button" aria-label="Спробуйте ще раз" class="cta cta-icon cta-secondary" onclick="retry()">
         <i aria-hidden="true" class="material-icons">refresh</i>
     </button>
