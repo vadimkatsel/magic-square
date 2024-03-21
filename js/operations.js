@@ -77,9 +77,7 @@ async function generate() {
         return proposedBoard;
     }
 
-    function random(min, max) {
-    return Math.floor(Math.random() * (max - min) + min)
-}
+
 
     function isOneComplexityRadioButtonsSelected() {
         let flag = false
@@ -95,18 +93,18 @@ async function generate() {
 
     switch (COMPLEXITY_TYPE) {
         case "EASY_LEVEL": {
-            BEG = getRandomNumberInRange(1, 5) 
-            STEP = getRandomNumberInRange(1, 2) 
+            BEG = random(1, 5) 
+            STEP = random(1, 2) 
             break
         }
         case "MEDIUM_LEVEL": {
-            BEG = getRandomNumberInRange(5, 7); // від 3 до 7
-            STEP = getRandomNumberInRange(1, 11 - N); // від 1 до 11 - N
+            BEG = random(5, 7); // від 3 до 7
+            STEP = random(1, 11 - N); // від 1 до 11 - N
             break
         }
         case "HARD_LEVEL": {
-            BEG = getRandomNumberInRange(6, 10) // від 6 до 10
-            STEP = getRandomNumberInRange(1, 11 - N);  // від 1 до 11 - N
+            BEG = random(6, 10) // від 6 до 10
+            STEP = random(1, 11 - N);  // від 1 до 11 - N
             break
         }
         default: throw new Error("unknown complexity level")
