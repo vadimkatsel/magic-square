@@ -77,6 +77,10 @@ async function generate() {
         return proposedBoard;
     }
 
+    function random(min, max) {
+    return Math.floor(Math.random() * (max - min) + min)
+}
+
     function isOneComplexityRadioButtonsSelected() {
         let flag = false
         for (const x of labelsComplexityRadioButtons) {
