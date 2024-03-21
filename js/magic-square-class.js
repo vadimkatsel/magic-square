@@ -40,13 +40,12 @@ function buildSinglyEvenMagicSquare(n, m_min, step) {
     let m = m_min;
     let nMini = Math.floor(n / 2);
     
-    
     let A = buildOddMagicSquare(nMini, m, step);
-    m += an(m_min, step,Math.pow(n, 2) / 4);
+    m += step * Math.pow(n, 2) / 4;
     let B = buildOddMagicSquare(nMini, m, step);
-    m += an(m_min, step,Math.pow(n, 2) / 4);
+    m += step * Math.pow(n, 2) / 4;
     let C = buildOddMagicSquare(nMini, m, step);
-    m += an(m_min, step,Math.pow(n, 2) / 4);
+    m += step * Math.pow(n, 2) / 4;
     let D = buildOddMagicSquare(nMini, m, step);
 
     let middleOfQuarter = Math.floor(n / 4);
