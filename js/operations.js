@@ -6,8 +6,8 @@ let lastBEG
 let lastSTEP
 let lastN
 let CONST
-const width = 320 // 455 350
-const height = 260
+const width = document.body.clientWidth * 0.5;
+const height = width * 0.8
 const board = document.getElementById("board")
 const outputElement = document.getElementById("const")
 let COMPLEXITY_TYPE = "MEDIUM_LEVEL"
