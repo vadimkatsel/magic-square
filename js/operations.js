@@ -145,16 +145,15 @@ async function generate() {
     initial_square = Magic_square_obj.square;
     CONST = (2 * Number(BEG) + Number(STEP) * (Number(N) ** 2 - 1)) * 0.5 * Number(N) ** 2 / Number(N);
     outputElement.textContent = Number(CONST);
-   outputElement.style.lineHeight = "2em";
-    outputElement.style.fontSize =  "400%"; 
+    outputElement.style.fontSize =  "400%";
     outputElement.style.border = "5px solid #4A90E2";
     outputElement.style.padding = "5%";
     outputElement.style.borderRadius = "50%";
     outputElement.style.display = "flex";
     outputElement.style.alignItems = "center";
     outputElement.style.justifyContent = "center";
-    outputElement.style.width = "5ch";
-    outputElement.style.height = "5ch";
+    outputElement.style.width = "4ch";
+    outputElement.style.height = "4ch";
     
 
 
